@@ -1,9 +1,4 @@
 
-DROP TABLE IF EXISTS Order_Items;
-DROP TABLE IF EXISTS Orders;
-DROP TABLE IF EXISTS Products;
-DROP TABLE IF EXISTS Customers;
-
 
 CREATE TABLE Customers (
     customer_id INTEGER PRIMARY KEY,
