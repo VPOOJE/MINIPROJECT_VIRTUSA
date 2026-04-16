@@ -1,6 +1,5 @@
 import java.util.*;
 
-// Book class
 class Book {
     int id;
     String title;
@@ -15,7 +14,6 @@ class Book {
     }
 }
 
-// User class
 class User {
     int id;
     String name;
@@ -26,7 +24,6 @@ class User {
     }
 }
 
-// Transaction class
 class Transaction {
     int bookId;
     int userId;
@@ -43,7 +40,6 @@ class Transaction {
     }
 }
 
-// Main class
 public class LibrarySystem {
 
     static ArrayList<Book> books = new ArrayList<>();
@@ -51,7 +47,7 @@ public class LibrarySystem {
     static ArrayList<Transaction> records = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
-    // Add Book
+   
     static void addBook() {
         System.out.print("Enter Book ID: ");
         int id = sc.nextInt();
@@ -67,7 +63,7 @@ public class LibrarySystem {
         System.out.println("Book added successfully!");
     }
 
-    // View Books
+
     static void viewBooks() {
         if (books.isEmpty()) {
             System.out.println("No books available.");
@@ -79,7 +75,6 @@ public class LibrarySystem {
         }
     }
 
-    // ✅ Remove Book
     static void removeBook() {
         System.out.print("Enter Book ID to remove: ");
         int id = sc.nextInt();
@@ -106,7 +101,7 @@ public class LibrarySystem {
         }
     }
 
-    // Register User
+
     static void addUser() {
         System.out.print("Enter User ID: ");
         int id = sc.nextInt();
@@ -119,7 +114,6 @@ public class LibrarySystem {
         System.out.println("User registered successfully!");
     }
 
-    // Issue Book
     static void issueBook() {
         System.out.print("Enter Book ID: ");
         int bookId = sc.nextInt();
@@ -144,7 +138,7 @@ public class LibrarySystem {
         Date issueDate = new Date();
         Calendar cal = Calendar.getInstance();
         cal.setTime(issueDate);
-        cal.add(Calendar.DATE, -3); // 👈 for testing fine
+        cal.add(Calendar.DATE, 7); 
         Date dueDate = cal.getTime();
 
         records.add(new Transaction(bookId, userId, issueDate, dueDate));
@@ -153,7 +147,7 @@ public class LibrarySystem {
         System.out.println("Book issued! Due date: " + dueDate);
     }
 
-    // Return Book
+  
     static void returnBook() {
         System.out.print("Enter Book ID: ");
         int bookId = sc.nextInt();
@@ -185,7 +179,7 @@ public class LibrarySystem {
         System.out.println("Transaction not found!");
     }
 
-    // Search Book
+
     static void searchBook() {
         sc.nextLine();
         System.out.print("Enter title or author: ");
@@ -205,7 +199,7 @@ public class LibrarySystem {
         }
     }
 
-    // Menu
+    
     public static void main(String[] args) {
         while (true) {
             System.out.println("\n--- Library Menu ---");
