@@ -25,7 +25,12 @@ print("-------------------------------------")
 try:
     distance = float(input("Enter distance (in km): "))
     vehicle_type = input("Enter vehicle type (Economy / Premium / SUV): ").strip().lower()
-    hour = int(input("Enter hour of travel (0-23): "))
+    while True:
+        hour = int(input("Enter hour of travel (0-23): "))
+        if 0 <= hour <= 23:
+            break
+        else:
+            print("Invalid hour! Please enter a value between 0 and 23.")
 
     fare = calculate_fare(distance, vehicle_type, hour)
 
